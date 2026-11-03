@@ -33,12 +33,15 @@ Rules:
 - If a date is missing, report the available dates from list_observed_dates.
 """.strip()
 
-READ_ONLY = {
-    "readOnlyHint": True,
-    "destructiveHint": False,
-    "idempotentHint": True,
-    "openWorldHint": False,
-}
+def _annotations(title: str) -> dict[str, object]:
+    """Claude Connectors want annotations.title + readOnlyHint on every tool."""
+    return {
+        "title": title,
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": False,
+    }
 
 mcp = FastMCP(
     "Frontier Signal",
@@ -51,7 +54,10 @@ def _raise(exc: SignalError) -> None:
     raise SignalError(str(exc)) from exc
 
 
-@mcp.tool(annotations=READ_ONLY)
+@mcp.tool(
+    title="List buyer programmes",
+    annotations=_annotations("List buyer programmes"),
+)
 def list_buyer_programmes(
     type: Annotated[
         str | None,
@@ -99,7 +105,10 @@ def list_buyer_programmes(
         raise
 
 
-@mcp.tool(annotations=READ_ONLY)
+@mcp.tool(
+    title="Get a programme",
+    annotations=_annotations("Get a programme"),
+)
 def get_programme(
     name: Annotated[
         str,
@@ -125,7 +134,10 @@ def get_programme(
         raise
 
 
-@mcp.tool(annotations=READ_ONLY)
+@mcp.tool(
+    title="Demand mix",
+    annotations=_annotations("Demand mix"),
+)
 def demand_mix(
     observed: Annotated[
         str | None,
@@ -146,7 +158,10 @@ def demand_mix(
         raise
 
 
-@mcp.tool(annotations=READ_ONLY)
+@mcp.tool(
+    title="Latest public brief",
+    annotations=_annotations("Latest public brief"),
+)
 def latest_brief(
     observed: Annotated[
         str | None,
@@ -167,7 +182,10 @@ def latest_brief(
         raise
 
 
-@mcp.tool(annotations=READ_ONLY)
+@mcp.tool(
+    title="Baseline deltas",
+    annotations=_annotations("Baseline deltas"),
+)
 def deltas(
     observed: Annotated[
         str | None,
@@ -188,7 +206,10 @@ def deltas(
         raise
 
 
-@mcp.tool(annotations=READ_ONLY)
+@mcp.tool(
+    title="List observed dates",
+    annotations=_annotations("List observed dates"),
+)
 def list_observed_dates() -> ObservedDates:
     """List baseline dates (and public brief dates) available in this checkout.
 

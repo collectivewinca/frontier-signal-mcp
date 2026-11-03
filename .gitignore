@@ -15,3 +15,9 @@ htmlcov/
 .DS_Store
 .env
 .env.*
+node_modules/
+.wrangler/
+worker/.wrangler/
+worker/worker-configuration.d.ts
+*.tsbuildinfo
+.dev.vars

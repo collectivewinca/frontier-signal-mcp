@@ -1,0 +1,29 @@
+{
+  "name": "frontier-signal-mcp-worker",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "embed-data": "node ./scripts/embed-data.mjs",
+    "predev": "npm run embed-data",
+    "predeploy": "npm run embed-data",
+    "pretest": "npm run embed-data",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:domain": "wrangler deploy --x-route-zones --domain mcp.velab.org",
+    "dry-run": "npm run embed-data && wrangler deploy --dry-run",
+    "types": "wrangler types",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0",
+    "wrangler": "^4.157.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.4.0",
+    "agents": "^0.33.0",
+    "zod": "^4.6.7"
+  }
+}

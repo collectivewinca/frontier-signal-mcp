@@ -1,6 +1,6 @@
 [project]
 name = "frontier-signal-mcp"
-version = "0.1.0"
+version = "0.2.0"
 description = "MCP server for VE Lab Frontier Signal — query verified AI data-broker buyer programmes and demand signals."
 readme = "README.md"
 license = { text = "MIT" }
