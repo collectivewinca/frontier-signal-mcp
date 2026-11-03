@@ -7,15 +7,22 @@
     "url": "https://github.com/collectivewinca/frontier-signal-mcp",
     "source": "github"
   },
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "websiteUrl": "https://velab.org/frontier-signal/",
   "packages": [
     {
       "registryType": "pypi",
       "identifier": "frontier-signal-mcp",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "transport": {
         "type": "stdio"
       }
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.velab.org/mcp"
     }
   ]
 }

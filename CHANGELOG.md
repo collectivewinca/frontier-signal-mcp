@@ -2,6 +2,17 @@
 
 All notable changes to Frontier Signal MCP are documented in this file.
 
+## 0.2.0 — 2026-11-03
+
+### Added
+
+- Public HTTPS remote MCP on a Cloudflare Worker (`worker/`) using `createMcpHandler` and Streamable HTTP at `/mcp`.
+- Privacy policy at [docs/privacy.md](docs/privacy.md), served as HTML at `/privacy` and markdown at `/privacy.md`.
+- `server.json` `remotes` entry for `https://mcp.velab.org/mcp` (keep stdio `packages`).
+- Tool `title` plus `annotations.title` and `readOnlyHint` on all six tools (Python and Worker).
+- README listing materials, Claude custom connector test steps, and Worker deploy commands.
+- `scripts/deploy.sh` and `worker/wrangler.jsonc`.
+
 ## 0.1.0 — 2026-11-03
 
 ### Added

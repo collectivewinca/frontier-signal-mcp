@@ -47,15 +47,23 @@ async def test_tools_registered() -> None:
     names = {tool.name for tool in tools}
     assert EXPECTED_TOOLS <= names
     for tool in tools:
-        if tool.name in EXPECTED_TOOLS:
-            annotations = getattr(tool, "annotations", None)
-            if annotations is None:
-                continue
-            read_only = getattr(annotations, "read_only_hint", None)
-            if read_only is None:
-                read_only = getattr(annotations, "readOnlyHint", None)
-            if read_only is not None:
-                assert read_only is True
+        if tool.name not in EXPECTED_TOOLS:
+            continue
+        title = getattr(tool, "title", None)
+        annotations = getattr(tool, "annotations", None)
+        ann_title = None
+        read_only = None
+        if annotations is not None:
+            ann_title = getattr(annotations, "title", None)
+            if isinstance(annotations, dict):
+                ann_title = annotations.get("title")
+                read_only = annotations.get("readOnlyHint", annotations.get("read_only_hint"))
+            else:
+                read_only = getattr(annotations, "read_only_hint", None)
+                if read_only is None:
+                    read_only = getattr(annotations, "readOnlyHint", None)
+        assert title or ann_title, f"{tool.name} is missing a title"
+        assert read_only is True, f"{tool.name} must set readOnlyHint"
 
 
 @pytest.mark.asyncio

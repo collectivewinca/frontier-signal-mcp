@@ -2,12 +2,14 @@
 
 Query **verified** AI data-broker buyer programmes and demand signals from [VE Lab](https://velab.org/) [Frontier Signal](https://velab.org/frontier-signal/).
 
-This is a Python MCP server (FastMCP + uv). v1 is public and read-only. It serves committed daily baselines from this repo so an agent can work **offline** — no API keys, no login, no gated watchlist.
+Public and read-only. No API keys, no login, no gated watchlist. Tools never invent hit counts.
 
 <!-- mcp-name: io.github.collectivewinca/frontier-signal-mcp -->
 
 Live surfaces:
 
+- **Remote MCP (Streamable HTTP):** `https://mcp.velab.org/mcp` (preferred custom domain after deploy; `*.workers.dev` is the v1 fallback)
+- **Privacy policy:** [docs/privacy.md](docs/privacy.md) · hosted at `/privacy` on the same Worker
 - Product: [velab.org/frontier-signal](https://velab.org/frontier-signal/)
 - Public weekly brief: [velab.org/frontier-signal/brief](https://velab.org/frontier-signal/brief/)
 - Gated watchlist (not exposed here): [velab.org/frontier-signal/watchlist](https://velab.org/frontier-signal/watchlist)
@@ -16,18 +18,91 @@ Live surfaces:
 
 One verb: **query** verified buyer programmes and demand signals.
 
-| Tool | Returns |
+| Tool | Title | Returns |
+| --- | --- | --- |
+| `list_buyer_programmes` | List buyer programmes | Sources from a baseline, optional filters `type`, `status`, `category`. Fields: name, url, band, referral, categories, status, notes. |
+| `get_programme` | Get a programme | One source by exact or fuzzy name. |
+| `demand_mix` | Demand mix | Hot categories (`[category, mention_count]`) for latest or a given `observed` date. |
+| `latest_brief` | Latest public brief | Public brief markdown for latest or a date. Gated sections are stripped. |
+| `deltas` | Baseline deltas | `deltas_vs_prev` (and `recheck` if present) for latest or a date. |
+| `list_observed_dates` | List observed dates | Baseline dates (and public brief dates) in this checkout. |
+
+Every tool sets `title` and `readOnlyHint: true` (Claude Connectors / ChatGPT Apps requirement). Mention counts on `demand_mix` are **heuristics recorded on the baseline**, not search-engine hit counts.
+
+## Remote HTTPS MCP
+
+This is the path for **Official MCP Registry remotes**, **Claude custom connectors**, and **ChatGPT Apps**.
+
+| | |
 | --- | --- |
-| `list_buyer_programmes` | Sources from a baseline, optional filters `type`, `status`, `category`. Fields: name, url, band, referral, categories, status, notes. |
-| `get_programme` | One source by exact or fuzzy name. |
-| `demand_mix` | Hot categories (`[category, mention_count]`) for latest or a given `observed` date. |
-| `latest_brief` | Public brief markdown for latest or a date. Gated sections are stripped. |
-| `deltas` | `deltas_vs_prev` (and `recheck` if present) for latest or a date. |
-| `list_observed_dates` | Baseline dates (and public brief dates) in this checkout. |
+| Transport | Streamable HTTP |
+| Endpoint | `https://mcp.velab.org/mcp` |
+| Privacy | `https://mcp.velab.org/privacy` |
+| Auth | None (public read-only) |
+| Worker | `worker/` (Cloudflare Workers + `createMcpHandler`) |
 
-Mention counts on `demand_mix` are **heuristics recorded on the baseline**, not search-engine hit counts. Tools never invent counts, URLs, or programmes. If a date is missing they say so and list what *is* available.
+If `mcp.velab.org` is not yet attached, the Worker also publishes `https://frontier-signal-mcp.<your-subdomain>.workers.dev/mcp`. After `wrangler deploy`, Wrangler prints the live URL — use that until the custom domain is on.
 
-## Install
+### Hit the remote URL
+
+```bash
+# Health
+curl -sS https://mcp.velab.org/health
+
+# MCP initialize (Streamable HTTP)
+curl -sS https://mcp.velab.org/mcp \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"curl","version":"0"}}}'
+```
+
+Cursor (remote):
+
+```json
+{
+  "mcpServers": {
+    "frontier-signal": {
+      "url": "https://mcp.velab.org/mcp"
+    }
+  }
+}
+```
+
+### Claude custom connector — test steps
+
+1. Open [claude.ai](https://claude.ai) → **Settings** → **Connectors** (or **Custom connectors**).
+2. **Add custom connector**.
+3. Name: `Frontier Signal`.
+4. URL: `https://mcp.velab.org/mcp` (or the `workers.dev` URL from deploy).
+5. Authentication: **No authentication**.
+6. Save and enable the connector for a chat.
+7. Ask: *Using Frontier Signal, list observed dates and then the demand mix. Do not invent extra mention counts.*
+8. Confirm Claude calls `list_observed_dates` then `demand_mix`. Latest cut should be `2026-11-03` in this checkout; Software / code mention count is **12** (heuristic, not a hit count).
+9. Optional: *Look up Lazarus* → `get_programme` returns **Turing (Lazarus)**. *Show the public brief* → `latest_brief` must not include gated watchlist copy.
+
+### ChatGPT Apps / Connectors
+
+1. Create or edit the app / custom GPT.
+2. Add an MCP server / connector with URL `https://mcp.velab.org/mcp`.
+3. No OAuth client ID or secret.
+4. Smoke the same prompts as the Claude steps above.
+5. Point the app’s privacy URL at `https://mcp.velab.org/privacy`.
+
+## Listing materials (Registry, Claude, ChatGPT)
+
+| Field | Copy |
+| --- | --- |
+| **One-liner** | Query verified AI data-broker buyer programmes and demand signals. |
+| **Description** | Frontier Signal is VE Lab’s public, read-only MCP for daily baselines of AI data-buyer programmes, demand mix, and public briefs. No login. Does not invent hit counts or expose the gated watchlist. |
+| **Support** | [hello@velab.org](mailto:hello@velab.org) (also [alet@velab.org](mailto:alet@velab.org)) |
+| **Privacy policy** | https://mcp.velab.org/privacy |
+| **Homepage** | https://velab.org/frontier-signal/ |
+| **MCP URL** | https://mcp.velab.org/mcp |
+| **Icon / brand** | VE Lab / Frontier Signal — [velab.org](https://velab.org/) |
+
+`server.json` lists the Streamable HTTP remote plus the local PyPI/stdio package. Registry publish is still a later step (`mcp-publisher`).
+
+## Local stdio (Cursor / Claude Desktop)
 
 Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/).
 
@@ -35,32 +110,10 @@ Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/).
 git clone https://github.com/collectivewinca/frontier-signal-mcp
 cd frontier-signal-mcp
 uv sync
-```
-
-Run the server (stdio, the default):
-
-```bash
 uv run python -m frontier_signal_mcp
 ```
 
-Equivalent entry points:
-
-```bash
-uv run frontier-signal-mcp
-uv run fastmcp run src/frontier_signal_mcp/server.py:mcp
-```
-
-Documented remote path (not required for v1):
-
-```bash
-uv run python -m frontier_signal_mcp --transport http --host 127.0.0.1 --port 8000
-```
-
-Put a TLS reverse proxy in front of that before exposing it to ChatGPT Apps or Claude Connectors. v1 itself does not authenticate; treat the HTTP transport as public read-only.
-
-## Cursor / Claude / ChatGPT config
-
-Replace `/ABSOLUTE/PATH/to/frontier-signal-mcp` with the clone path.
+Equivalent: `uv run frontier-signal-mcp`.
 
 ### Cursor (`~/.cursor/mcp.json` or project `.cursor/mcp.json`)
 
@@ -84,83 +137,79 @@ Replace `/ABSOLUTE/PATH/to/frontier-signal-mcp` with the clone path.
 
 ### Claude Desktop (`claude_desktop_config.json`)
 
-```json
-{
-  "mcpServers": {
-    "frontier-signal": {
-      "command": "uv",
-      "args": [
-        "--directory",
-        "/ABSOLUTE/PATH/to/frontier-signal-mcp",
-        "run",
-        "python",
-        "-m",
-        "frontier_signal_mcp"
-      ]
-    }
-  }
-}
+Same `command` / `args` as Cursor, under `mcpServers.frontier-signal`.
+
+## Deploy the Worker
+
+Cloudflare account used by VE Lab Workers: `aa6789c67f992fd0b9f5933e86e11184` (set as `account_id` in `worker/wrangler.jsonc`).
+
+```bash
+cd worker
+npm ci
+npm test
+npx wrangler login          # or: export CLOUDFLARE_API_TOKEN=...
+npx wrangler deploy         # prints https://frontier-signal-mcp.<subdomain>.workers.dev
 ```
 
-### ChatGPT (Apps / Connectors)
+This environment has no Cloudflare API token, so production is not published from the PR agent. Config is `worker/wrangler.jsonc` (Wrangler 4; equivalent to wrangler.toml). After login, the commands above are the whole deploy.
 
-ChatGPT's connector path wants a **remote** MCP URL, not stdio.
+Or from repo root: `bash scripts/deploy.sh`.
 
-1. Run `--transport http` behind HTTPS (see above).
-2. Point the ChatGPT app or connector at `https://your-host/mcp`.
-3. No secrets to configure — this server has none.
+Attach the preferred host **after** the Worker exists and the `velab.org` zone is in this account:
 
-Until that host exists, use Cursor or Claude Desktop with the stdio snippet. Distribution order is Registry first, then ChatGPT + Claude (see below).
+```bash
+cd worker
+npx wrangler deploy --x-route-zones --domain mcp.velab.org
+```
+
+Then confirm:
+
+- `https://mcp.velab.org/mcp` — Streamable HTTP
+- `https://mcp.velab.org/privacy` — this policy
+- `https://mcp.velab.org/health` — `{ ok: true, ... }`
+
+Local Worker: `cd worker && npm run dev` then `http://127.0.0.1:8787/mcp`.
+
+Dropping in a newer daily baseline: add files under `data/`, run `npm run embed-data` in `worker/`, redeploy. The Python stdio server picks up new files on the next tool call without a rebuild.
 
 ## Data (offline from the repo)
-
-Baselines and public briefs ship in-tree so the server does not fetch the network:
 
 ```
 data/baselines/YYYY-MM-DD.json
 data/briefs/YYYY-MM-DD.md
 ```
 
-Sample cuts in this checkout: `2026-10-30`, `2026-11-02`, `2026-11-03` (plus the public brief for `2026-11-03`).
+Sample cuts: `2026-10-30`, `2026-11-02`, `2026-11-03` (plus the public brief for `2026-11-03`).
 
-### Drop in a newer daily baseline
+1. Copy the day’s JSON to `data/baselines/YYYY-MM-DD.json` (`observed` must match the filename).
+2. Copy **only the public brief** to `data/briefs/YYYY-MM-DD.md`. Stop before any gated / watchlist-login heading.
+3. Stdio: restart the MCP client if needed. Remote: `cd worker && npm run embed-data && npx wrangler deploy`.
 
-1. Copy the day's JSON to `data/baselines/YYYY-MM-DD.json`. The filename date should match the `observed` field.
-2. Copy **only the public brief** to `data/briefs/YYYY-MM-DD.md`. Stop before any heading that says gated / watchlist-login. Do not add watchlist-only answers.
-3. Restart the MCP client (the store also reloads on mtime, so a running stdio server will pick up new files on the next tool call).
-
-Override the data directory with `FRONTIER_SIGNAL_DATA_DIR=/path/to/data` if you keep cuts outside the package.
-
-Schema (source of truth: the JSON itself):
-
-- `observed` (YYYY-MM-DD)
-- `sources[]`: `name`, `type`, `url`, `status`, `categories`, `band`, `referral`, `notes`, `checked`, optional `browser`
-- `hot[]`: `[category, mention_count]` pairs
-- `deltas_vs_prev[]`, `hot_note`, optional `recheck`
+Override the Python data directory with `FRONTIER_SIGNAL_DATA_DIR=/path/to/data`.
 
 ## Privacy
 
-- **Public verified data only.** Programmes, bands, and briefs in this repo are the public Frontier Signal cuts.
-- **No PII, no credentials, no API keys.** The server does not authenticate and does not call third-party APIs.
-- **No gated watchlist content.** `latest_brief` strips headings that mark gated / watchlist-login copy. Do not commit that copy under `data/briefs/`.
-- **No invented hit counts.** `demand_mix` returns the `hot` array as recorded. Agents must not add counts.
+Full policy: [docs/privacy.md](docs/privacy.md) (rendered at `/privacy` on the Worker).
+
+- **Public verified data only.** No PII, no credentials, no API keys.
+- **No gated watchlist content.** `latest_brief` strips gated headings.
+- **No invented hit counts.** `demand_mix` returns the `hot` array as recorded.
+- **No auth** is correct for this product.
 
 ## Distribution intent (10-store)
 
-v1 is a stdio server with a documented HTTP path. Intended store order:
-
-1. **Official MCP Registry** (first) — `server.json` uses `io.github.collectivewinca/frontier-signal-mcp`. Publish the PyPI package, then `mcp-publisher`. The README contains the required `mcp-name` marker.
-2. **ChatGPT Apps** and **Claude Connectors** (fast approval path).
+1. **Official MCP Registry** — `server.json` name `io.github.collectivewinca/frontier-signal-mcp`, with `remotes` (Streamable HTTP) and `packages` (stdio).
+2. **ChatGPT Apps** and **Claude Connectors** (custom connector URL above).
 3. Then Google Connected Apps, Grok, Cursor Marketplace, Meta Muse, Copilot Agent Store, AgentExchange, AWS Marketplace.
 
-This scaffold is not yet submitted to those stores.
+This repo is not yet submitted to those stores.
 
 ## Development
 
 ```bash
 uv sync
 uv run pytest
-uv run python -m frontier_signal_mcp --help
+cd worker && npm ci && npm test
 ```
 
 See [AGENTS.md](AGENTS.md) for invariants and [CHANGELOG.md](CHANGELOG.md) for releases.
