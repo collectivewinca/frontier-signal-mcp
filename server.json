@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.collectivewinca/frontier-signal-mcp",
+  "title": "Frontier Signal",
+  "description": "Query verified AI data-broker buyer programmes and demand signals.",
+  "repository": {
+    "url": "https://github.com/collectivewinca/frontier-signal-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "frontier-signal-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
