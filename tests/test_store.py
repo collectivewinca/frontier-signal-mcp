@@ -16,12 +16,19 @@ def test_parse_all_committed_baselines(data_dir: Path) -> None:
         "2026-10-30.json",
         "2026-11-02.json",
         "2026-11-03.json",
+        "2026-11-04.json",
     ]
+    expected_sources = {
+        "2026-10-30.json": 24,
+        "2026-11-02.json": 24,
+        "2026-11-03.json": 24,
+        "2026-11-04.json": 25,
+    }
     for path in files:
         raw = json.loads(path.read_text(encoding="utf-8"))
         baseline = Baseline.model_validate(raw)
         assert baseline.observed == path.stem
-        assert len(baseline.sources) == 24
+        assert len(baseline.sources) == expected_sources[path.name]
         assert len(baseline.hot) == 9
         assert baseline.hot[0].category == "Software / code"
         assert baseline.hot[0].mention_count == 12
@@ -94,17 +101,18 @@ def test_demand_mix_matches_json_and_does_not_invent(
 
 def test_deltas_latest(store: SignalStore) -> None:
     result = store.deltas()
-    assert result.observed == "2026-11-03"
-    assert any("Lazarus" in note for note in result.deltas_vs_prev)
+    assert result.observed == "2026-11-04"
+    assert any("Patronus" in note for note in result.deltas_vs_prev)
+    assert any("micro1" in note for note in result.deltas_vs_prev)
     assert result.recheck
 
 
 def test_list_observed_dates(store: SignalStore) -> None:
     dates = store.list_observed_dates()
-    assert dates.dates == ["2026-11-03", "2026-11-02", "2026-10-30"]
-    assert dates.latest == "2026-11-03"
-    assert dates.brief_dates == ["2026-11-03"]
-    assert dates.latest_brief == "2026-11-03"
+    assert dates.dates == ["2026-11-04", "2026-11-03", "2026-11-02", "2026-10-30"]
+    assert dates.latest == "2026-11-04"
+    assert dates.brief_dates == ["2026-11-04", "2026-11-03"]
+    assert dates.latest_brief == "2026-11-04"
 
 
 def test_unknown_date_lists_available(store: SignalStore) -> None:
@@ -114,9 +122,10 @@ def test_unknown_date_lists_available(store: SignalStore) -> None:
 
 def test_latest_brief_is_public_only(store: SignalStore) -> None:
     brief = store.latest_brief()
-    assert brief.observed == "2026-11-03"
+    assert brief.observed == "2026-11-04"
     assert brief.public_only is True
     assert "Public brief" in brief.markdown
+    assert "Patronus AI" in brief.markdown
     assert "Lazarus" in brief.markdown
     assert "Gated full answers" not in brief.markdown
     assert "Implied capability" not in brief.markdown

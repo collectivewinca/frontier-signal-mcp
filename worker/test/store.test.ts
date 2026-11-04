@@ -46,16 +46,28 @@ describe("SignalStore", () => {
 
   it("returns latest deltas and observed dates", () => {
     const dates = store.listObservedDates();
-    expect(dates.dates).toEqual(["2026-11-03", "2026-11-02", "2026-10-30"]);
-    expect(dates.latest).toBe("2026-11-03");
+    expect(dates.dates).toEqual([
+      "2026-11-04",
+      "2026-11-03",
+      "2026-11-02",
+      "2026-10-30",
+    ]);
+    expect(dates.latest).toBe("2026-11-04");
     const deltas = store.deltas();
-    expect(deltas.deltas_vs_prev.some((note) => note.includes("Lazarus"))).toBe(true);
+    expect(deltas.deltas_vs_prev.some((note) => note.includes("Patronus"))).toBe(
+      true,
+    );
+    expect(deltas.deltas_vs_prev.some((note) => note.includes("micro1"))).toBe(
+      true,
+    );
   });
 
   it("serves the public brief only", () => {
     const brief = store.latestBrief();
+    expect(brief.observed).toBe("2026-11-04");
     expect(brief.public_only).toBe(true);
     expect(brief.markdown).toContain("Public brief");
+    expect(brief.markdown).toContain("Patronus AI");
     expect(brief.markdown).not.toContain("Gated full answers");
     expect(brief.markdown).not.toContain("Implied capability");
   });
