@@ -77,7 +77,7 @@ Cursor (remote):
 5. Authentication: **No authentication**.
 6. Save and enable the connector for a chat.
 7. Ask: *Using Frontier Signal, list observed dates and then the demand mix. Do not invent extra mention counts.*
-8. Confirm Claude calls `list_observed_dates` then `demand_mix`. Latest cut should be `2026-11-03` in this checkout; Software / code mention count is **12** (heuristic, not a hit count).
+8. Confirm Claude calls `list_observed_dates` then `demand_mix`. Latest cut should be `2026-11-04` in this checkout; Software / code mention count is **12** (heuristic, not a hit count).
 9. Optional: *Look up Lazarus* → `get_programme` returns **Turing (Lazarus)**. *Show the public brief* → `latest_brief` must not include gated watchlist copy.
 
 ### ChatGPT Apps / Connectors
@@ -179,7 +179,7 @@ data/baselines/YYYY-MM-DD.json
 data/briefs/YYYY-MM-DD.md
 ```
 
-Sample cuts: `2026-10-30`, `2026-11-02`, `2026-11-03` (plus the public brief for `2026-11-03`).
+Sample cuts: `2026-10-30`, `2026-11-02`, `2026-11-03`, `2026-11-04` (plus public briefs for `2026-11-03` and `2026-11-04`).
 
 1. Copy the day’s JSON to `data/baselines/YYYY-MM-DD.json` (`observed` must match the filename).
 2. Copy **only the public brief** to `data/briefs/YYYY-MM-DD.md`. Stop before any gated / watchlist-login heading.

@@ -2,6 +2,12 @@
 
 All notable changes to Frontier Signal MCP are documented in this file.
 
+## Unreleased
+
+### Added
+
+- Added the 2026-11-04 baseline and public brief (Patronus AI buyer, micro1 band widen, and board/lab drift).
+
 ## 0.2.0 — 2026-11-03
 
 ### Added
