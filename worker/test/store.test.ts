@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
@@ -12,6 +12,14 @@ function loadBaseline(date: string): unknown {
   return JSON.parse(
     readFileSync(join(repoRoot, "data/baselines", `${date}.json`), "utf8"),
   );
+}
+
+function committedDates(subdir: string, ext: string): string[] {
+  return readdirSync(join(repoRoot, "data", subdir))
+    .filter((name) => name.endsWith(ext))
+    .map((name) => name.slice(0, -ext.length))
+    .sort()
+    .reverse();
 }
 
 describe("SignalStore", () => {
@@ -46,28 +54,24 @@ describe("SignalStore", () => {
 
   it("returns latest deltas and observed dates", () => {
     const dates = store.listObservedDates();
-    expect(dates.dates).toEqual([
-      "2026-11-04",
-      "2026-11-03",
-      "2026-11-02",
-      "2026-10-30",
-    ]);
-    expect(dates.latest).toBe("2026-11-04");
+    const baselineDates = committedDates("baselines", ".json");
+    expect(dates.dates).toEqual(baselineDates);
+    expect(dates.latest).toBe(baselineDates[0]);
+    expect(dates.brief_dates).toEqual(committedDates("briefs", ".md"));
+    expect(dates.latest_brief).toBe(dates.brief_dates[0]);
     const deltas = store.deltas();
-    expect(deltas.deltas_vs_prev.some((note) => note.includes("Patronus"))).toBe(
-      true,
-    );
-    expect(deltas.deltas_vs_prev.some((note) => note.includes("micro1"))).toBe(
-      true,
-    );
+    expect(deltas.observed).toBe(dates.latest);
+    const raw = loadBaseline(dates.latest as string) as {
+      deltas_vs_prev: string[];
+    };
+    expect(deltas.deltas_vs_prev).toEqual(raw.deltas_vs_prev);
   });
 
   it("serves the public brief only", () => {
     const brief = store.latestBrief();
-    expect(brief.observed).toBe("2026-11-04");
+    expect(brief.observed).toBe(store.listObservedDates().latest);
     expect(brief.public_only).toBe(true);
     expect(brief.markdown).toContain("Public brief");
-    expect(brief.markdown).toContain("Patronus AI");
     expect(brief.markdown).not.toContain("Gated full answers");
     expect(brief.markdown).not.toContain("Implied capability");
   });
