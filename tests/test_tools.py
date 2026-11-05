@@ -70,8 +70,8 @@ async def test_tools_registered() -> None:
 async def test_list_observed_dates_tool_happy_path() -> None:
     async with Client(mcp) as client:
         payload = _payload(await client.call_tool("list_observed_dates", {}))
-    assert payload["latest"] == "2026-11-04"
-    assert payload["dates"][0] == "2026-11-04"
+    assert payload["latest"] == "2026-11-05"
+    assert payload["dates"][0] == "2026-11-05"
     assert "2026-10-30" in payload["dates"]
 
 
@@ -114,3 +114,5 @@ def test_package_data_present(data_dir: Path) -> None:
     assert (data_dir / "briefs" / "2026-11-03.md").is_file()
     assert (data_dir / "baselines" / "2026-11-04.json").is_file()
     assert (data_dir / "briefs" / "2026-11-04.md").is_file()
+    assert (data_dir / "baselines" / "2026-11-05.json").is_file()
+    assert (data_dir / "briefs" / "2026-11-05.md").is_file()

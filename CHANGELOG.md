@@ -6,6 +6,7 @@ All notable changes to Frontier Signal MCP are documented in this file.
 
 ### Added
 
+- Added the 2026-11-05 baseline and public brief (AIData board company-records middle half widened to $131K–$548K; Handshake calculator default $400K–$800K+ per the board; micro1 referral packages $100K–$3M+; AfterQuery floor read as 10+ people / 3+ years).
 - Added the 2026-11-04 baseline and public brief (Patronus AI buyer, micro1 band widen, and board/lab drift).
 
 ## 0.2.0 — 2026-11-03
