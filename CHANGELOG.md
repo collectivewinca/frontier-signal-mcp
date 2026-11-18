@@ -6,6 +6,7 @@ All notable changes to Frontier Signal MCP are documented in this file.
 
 ### Added
 
+- Added the 2026-11-16 baseline and public brief, so the MCP matches the Nov 16 weekly brief on velab.org (44 buyers, 32 with a public figure; company-records middle half $149K–$537K, was $150K–$548K; tasks and environments $49–$102 with a seventh buyer; expert work $54–$104). Regenerated `worker/src/embedded.ts`. The source cut stored `recheck` as an object; it is committed as a single string (`key: value; ...`) because the Python model and Worker expect a string. Python tests updated for the new latest date.
 - Added the 2026-11-05 baseline and public brief (AIData board company-records middle half widened to $131K–$548K; Handshake calculator default $400K–$800K+ per the board; micro1 referral packages $100K–$3M+; AfterQuery floor read as 10+ people / 3+ years).
 - Added the 2026-11-04 baseline and public brief (Patronus AI buyer, micro1 band widen, and board/lab drift).
 
