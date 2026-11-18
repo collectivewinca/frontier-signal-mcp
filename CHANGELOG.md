@@ -6,6 +6,7 @@ All notable changes to Frontier Signal MCP are documented in this file.
 
 ### Changed
 
+- Removed the remaining AIData board licence-change sentence (CC BY 4.0 to paid Market Data Licence) from the 2026-11-16 baseline source `notes`. Regenerated `worker/src/embedded.ts`. Other uses of "licence" describe buyers' own programmes (Handshake, Polyshares, Newsflare) and stay.
 - Removed the internal "AIData licence" line (member-answer handling guidance) from the 2026-11-16 baseline `recheck` text, so the `deltas` tool no longer serves it. Regenerated `worker/src/embedded.ts`.
 
 ### Added
