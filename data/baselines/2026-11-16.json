@@ -1,0 +1,483 @@
+{
+ "observed": "2026-11-16",
+ "sources": [
+  {
+   "name": "Mercor (referrals)",
+   "type": "buyer",
+   "url": "https://mercor.com/referrals",
+   "status": "ok",
+   "categories": "Expert roles across software, legal, accounting; 8 named industries in data programme",
+   "band": "Per AIData board: 25 listings, $10K–$1.5M per company (was 24 listings, $20K–$1.5M on 10-30; not verified on Mercor page)",
+   "referral": "$250–$15,000 per referral",
+   "notes": "Avg expert pay $106/hr; 192,000+ roles filled 2026-11-02: AIData board now lists 25 Mercor listings from $10K (was 24 from $20K); www.mercor.com/referrals/ box fetch text-identical to 10-30. 2026-11-16: AIData board lists 26 Mercor listings (was 25), $10K-$1.5M range unchanged; mercor.com/referrals text unchanged.",
+   "checked": "2026-11-16",
+   "browser": {
+    "status": "ok",
+    "facts": [
+     "Redirects to www.mercor.com/referrals/",
+     "Referral payout $250-$15,000 by role type and seniority",
+     "Referrer earns 20% of referral's earnings until Earnings Cap",
+     "Illustrative payouts: $330-$820",
+     "192,000+ roles filled, avg pay $106/hr, 100,000+ experts",
+     "No expiry on submitted referrals",
+     "No company-data listings shown"
+    ],
+    "notes": "CTA: Refer someone (likely login). Real browser only.",
+    "observed": "2026-10-26"
+   }
+  },
+  {
+   "name": "Mercor (work board)",
+   "type": "buyer",
+   "url": "https://work.mercor.com",
+   "status": "browser-ok",
+   "categories": "Software/code roles",
+   "band": "Per-role hourly",
+   "referral": "See referrals",
+   "notes": "JS-rendered; Apify-worthy",
+   "checked": "2026-11-16",
+   "browser": {
+    "status": "ok",
+    "facts": [
+     "Redirects to /explore; listings visible without login",
+     "Stanford Youth Study - $110/hr",
+     "Retail Trader - $400/task",
+     "Many chemistry/safety/defense expert roles at $65-$75/task, each with $250 referral bonus",
+     "Social proof: 2108 hired this month"
+    ],
+    "notes": "CTA: Apply / Sign in / Refer & earn. JS shell, real browser only.",
+    "observed": "2026-10-26"
+   }
+  },
+  {
+   "name": "Handshake AI",
+   "type": "buyer",
+   "url": "https://joinhandshake.com/ai/",
+   "status": "ok",
+   "categories": "Any industry; software, finance, legal, logistics, energy",
+   "band": "$100K–$4M+",
+   "referral": "Not published here",
+   "notes": "20+ FTE, 3+ yrs; FAQ softened 22 Oct. Per AIData board (2026-10-26): new calculator engine since late Oct shows $257K–$513K for 100 staff/10 yrs/5 tools (not verified on Handshake page, JS). 2026-11-02 box fetch: Software Engineer role ceiling raised from up to $120/hr to up to $150/hr; other role ceilings unchanged (Philosophy Expert up to $120/hr; Game Developer / PCB Tool Specialist up to $125/hr). 2026-11-05 per AIData board (not verified on Handshake page; joinhandshake.com/ai/ box fetch text-identical to 11-04): calculator rebuilt with separate company and software steps; licence page default reads \"Your data could be worth $400,000-$800,000+\" (old engine showed $257K–$513K for 100 staff/10 yrs/5 tools). 2026-11-16 per AIData board (13 Nov, not verified on Handshake page; joinhandshake.com/ai/ box fetch byte-identical to 11-13): licence and referral pages claim $250M paid to 1,000+ partner companies; FAQ accepts referrals globally, licenses only to US and allied-country labs/enterprises, initial AI interview; data-partnerships page A/B tested (variant /ai/data-partnerships-b shows no estimate).",
+   "checked": "2026-11-16",
+   "browser": {
+    "status": "ok",
+    "facts": [
+     "Cookie banner shown (not dismissed)",
+     "$500M+ payouts made, 188k+ fellows",
+     "AI Evaluation Specialist up to $17/hr",
+     "Energy Professional and FP&A Analyst up to $80/hr",
+     "Software Engineer up to $120/hr, Philosophy Expert up to $120/hr",
+     "Game Developer and PCB Tool Specialist up to $125/hr",
+     "US-based only with work authorization"
+    ],
+    "notes": "CTA: Sign up now / Apply. No payout calculator seen; only per-role 'up to' ranges.",
+    "observed": "2026-10-26"
+   }
+  },
+  {
+   "name": "Scale AI",
+   "type": "buyer",
+   "url": "https://scale.com/data-partnership",
+   "status": "200",
+   "categories": "Healthcare, legal, insurance (per broker)",
+   "band": "$10K–$1M+",
+   "referral": "Not published",
+   "notes": "Fixed 2026-10-24: singular /data-partnership is live (old /data-partnerships 404). Page lists industries; 40+ employee preference.",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "Turing (Lazarus)",
+   "type": "buyer",
+   "url": "https://lazarus.turing.com",
+   "status": "ok",
+   "categories": "Company operating records (communication, tickets, docs; code optional)",
+   "band": "Revenue share per sale; no upfront payout or figure published (was: single payout up to $1M; repos $10K–$100K+)",
+   "referral": "Refer a company: up to $50K (was Refer & Earn up to $10k)",
+   "notes": "2026-11-03 box fetch of lazarus.turing.com: meta description now \"Earn from your company's operating record. Lazarus by Turing prepares it and licenses it to frontier AI labs, and pays you on every sale. No upfront cost.\" (was \"Monetize your startup's codebase and operational data. Turing acquires real-world software assets...\"). JS bundle hero: \"We prepare your company's record, license it to labs, and pay you every time it sells. Nothing upfront.\"; FAQ \"Is source code required? No. Communication, tickets and docs often matter more.\"; referral page \"Refer a company. Earn up to $50K.\"; \"up to $1M\" copy gone. AIData board 2026-11-03 reclassified Turing (Lazarus) from own-account buyer to marketplace that pays a share of sales; split set in agreement, not published; no figure before a sample.",
+   "checked": "2026-11-16",
+   "browser": {
+    "status": "ok",
+    "facts": [
+     "Pitch: sell company operating history (Slack/email threads, code, tickets, wikis, decisions) as AI training data",
+     "Single payout up to $1M (hero); page counter rendered as 'Up to $0.00M' in snapshot, likely animation",
+     "Refer & Earn up to $10k",
+     "Process: intake call (1 business day, NDA), sample assessment (~1 week), valuation + one contract",
+     "Verticals: software, finance, support, sales/CRM, legal, ops",
+     "SOC 2 Type II, de-identification, air-gapped processing"
+    ],
+    "notes": "CTA: Get in Touch. Real browser only.",
+    "observed": "2026-10-26"
+   }
+  },
+  {
+   "name": "Polyshares",
+   "type": "buyer",
+   "url": "https://polyshares.com",
+   "status": "ok",
+   "categories": "Construction, healthcare, accounting, manufacturing, logistics, software, retail",
+   "band": "$100K–$2M+",
+   "referral": "Not published",
+   "notes": "Licences seen $110K–$450K 2026-11-16 per AIData board: four track-record licences each described as perpetual exclusive. polyshares.com byte-identical to 11-13.",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "micro1",
+   "type": "buyer",
+   "url": "https://www.micro1.ai/data-partnerships",
+   "status": "ok",
+   "categories": "Legal, code, internal comms/SOPs/CRM/support tickets; agent trajectories (new); shut-down companies track",
+   "band": "$100K–$500K; $500K–$3M; $3M+ (headline $100K–$3M+; was $500K–$2M / $2M+, headline $200K–$2M+)",
+   "referral": "Refer & earn 50k+ (headline on data-partnerships page)",
+   "notes": "Verified 2026-10-27 on https://www.micro1.ai/data-partnerships: tiers raised from $100k+/$500k+/$1M+ (per AIData board, change dated 26 Oct 2026); licenses qualifying agent trajectories for $1–2M annually; pays in full within 30 days of acceptance, typically $150K to over $2M. Blog Oct 9 2026: $1B enterprise data acquisition commitment over 12 months (https://www.micro1.ai/blog/micro1-commits-1b-to-enterprise-data-acquisition). 30+ staff, English, US first. 2026-11-04 box fetch: headline \"We're paying out $100k-3M+\" (was $200k-2M+); tiers $100K-500K / $500K-3M / $3M+ (was $500K-2M / $2M+); \"payments typically ranging from $100K to over $3M\" (was $150K to over $2M). Agent trajectories $1–2M annually and Refer & earn 50k+ unchanged. 2026-11-05 per AIData board: company-referral page now puts approved data packages at $100K–$3M+ on both operating and closed-company tracks (was $100K–$2M+); data-partnerships page text-identical to 11-04.",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "Ooak",
+   "type": "buyer",
+   "url": "https://ooak.ai",
+   "status": "unreachable-2026-11-16",
+   "categories": "Operating/winding-down/closed companies",
+   "band": "Up to $1M (raised from $300K)",
+   "referral": "Not published",
+   "notes": "No headcount minimum stated. Box curl 2026-10-27 and 2026-10-28: connection failed (TLS EOF / no response) on ooak.ai; unconfirmed whether site or box network. AIData board 2026-10-28: its estimator turned away a 10-person, 2-year-old company and priced a 25-person, 5-year-old one; partner page shows examples from 15+ people (board-side, not verified on Ooak). Box curl 2026-10-29: still no response (3rd day). Box curl 2026-10-30: TLS EOF again (4th day). Box curl 2026-11-02: TLS unexpected EOF again. Box curl 2026-11-03: no response again. 2026-11-16: TLS unexpected EOF again.",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "Labelbox Prism",
+   "type": "buyer",
+   "url": "https://prism.labelbox.com/",
+   "status": "200",
+   "categories": "Software, financial services, healthcare, manufacturing, logistics",
+   "band": "$50K–$1M+",
+   "referral": "Not published",
+   "notes": "Fixed 2026-10-24: Prism lives on subdomain; /categories lists in-demand data; contact prism@labelbox.com. Site: $50K–$1M+, exclusive by default.",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "SuperAnnotate",
+   "type": "buyer",
+   "url": "https://superannotate.com",
+   "status": "browser-ok",
+   "categories": "Any industry",
+   "band": "$100K–$1M+",
+   "referral": "Not published",
+   "notes": "JS shell",
+   "checked": "2026-11-16",
+   "browser": {
+    "status": "ok",
+    "facts": [
+     "Redirects to www.superannotate.com",
+     "Pitch: AI data infra and expert services, claims #1 AI Data Company, G2 4.9",
+     "Offerings: RL Environments, Multimodal Labeling, RLHF & SFT, Agent Trajectories, Evaluation, Off-the-shelf Datasets",
+     "Expert human-in-loop services",
+     "No payout figures"
+    ],
+    "notes": "CTA: Talk to Us / Contact us. Real browser only.",
+    "observed": "2026-10-26"
+   }
+  },
+  {
+   "name": "HUMXN",
+   "type": "buyer",
+   "url": "https://humxn.com",
+   "status": "dead",
+   "categories": "24 industries incl. banking, insurance, law, accounting, healthcare, construction, manufacturing",
+   "band": "$250K+",
+   "referral": "Not published",
+   "notes": "Returned 114-byte stub",
+   "checked": "2026-11-16",
+   "browser": {
+    "status": "empty",
+    "facts": [
+     "Redirects to humxn.com/lander: GoDaddy parked page",
+     "No company content"
+    ],
+    "notes": "Placeholder; no signal.",
+    "observed": "2026-10-26"
+   }
+  },
+  {
+   "name": "Nyne",
+   "type": "buyer",
+   "url": "https://nyne.ai",
+   "status": "ok",
+   "categories": "Legal, finance, accounting, software",
+   "band": "$100K+; beats written offers; page estimate now 10-15% of older estimator range (per AIData board)",
+   "referral": "Not published",
+   "notes": "20+ US W-2, 3+ yrs 2026-11-16 per AIData board (13 Nov): data-partnerships page estimate is 10-15% of older estimator range, factor random per visit (100 people/10 yrs/USA $38,308-$134,545; older nyne.ai/data-estimate still live shows $304,500-$657,000 for 50-100 people/8-15 yrs); now requires a decision-maker (owner/CEO/president). nyne.ai box fetch: only phone number changed.",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "Mode / BizBuyData",
+   "type": "buyer",
+   "url": "https://data.mode.inc",
+   "status": "ok",
+   "categories": "Legal, accounting, medical, finance",
+   "band": "$100K–$5M",
+   "referral": "$5K–$50K+ referral figures on page",
+   "notes": "AIData board 2026-10-28 reconciles staff minimums: own site takes legal 6+, accounting/finance/medical 10+, others 30+ (accounting firms held to 30+ as professional services); referral programme pays on 10+/15+/50+. Mode/BizBuy pages unchanged vs 10-27 on box fetch. 2026-11-02: data.mode.inc dropped the \"Cohort closing:\" label from its header; bands and referral copy unchanged.",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "BizBuyData /50k",
+   "type": "buyer",
+   "url": "https://bizbuydata.com/50k",
+   "status": "ok",
+   "categories": "Legal, accounting, medical, finance",
+   "band": "$100K–$5M",
+   "referral": "$50K+ cited",
+   "notes": "10+ legal, 15+ acct/med/fin, 50+ other",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "Grepped",
+   "type": "buyer",
+   "url": "https://grepped.com",
+   "status": "reported-concerns",
+   "categories": "Established businesses",
+   "band": "$20K–$5M",
+   "referral": "Not published",
+   "notes": "2026-11-10: AIData board moved Grepped (grepped.ai) off its buyer list into 'Reported concerns' (founder's self-reported $4M then $12M MRR unconfirmed per Dealroom/FourWeekMBA; site code called quotes 'deliberately optimistic'; referral terms clause 5.5 bars referrers from other routes for 12 months) — board-only, not independently verified. Returned 114-byte stub; AIData board 2026-10-27 says Grepped home page now reads \"worth millions\" / \"up to 6 figures per workspace\" (was $20K–$5M until late Oct); box curl still gets 114-byte stub, not verified. AIData board 2026-10-28: estimator sample ($29K–$41.5K) now gone too. AIData board 2026-11-04: Grepped home page now states no figure (\"We value it, de-identify it and list it, and you get paid when a lab buys.\"); the \"worth millions\" / \"up to 6 figures per workspace\" copy dropped in early November (board-only, not verified).",
+   "checked": "2026-11-16",
+   "browser": {
+    "status": "empty",
+    "facts": [
+     "Redirects to GoDaddy for-sale page",
+     "Asking $9,995 or $480/mo lease-to-own"
+    ],
+    "notes": "Domain for sale; no signal.",
+    "observed": "2026-10-26"
+   }
+  },
+  {
+   "name": "Anthropic careers",
+   "type": "lab",
+   "url": "https://job-boards.greenhouse.io/anthropic",
+   "status": "ok",
+   "categories": "Human Data ops, legal, finance, code",
+   "band": "—",
+   "referral": "—",
+   "notes": "Greenhouse API 2026-11-11: 677 jobs (676 on 11-10); Human Data titles unchanged. Greenhouse API 2026-11-10: 676 jobs (677 on 11-09); Data Operations Manager, Human Data unchanged. Greenhouse API 2026-11-03: 677 jobs (679 on 11-02); Data Operations Manager, Human Data; Product Management, Human Data Platform; titles unchanged 2026-11-05 Greenhouse API: 681 jobs; Human Data titles unchanged. 2026-11-13: 673 postings (was 672). 2026-11-16: 661 postings (was 673); Data Operations Manager, Human Data unchanged; removed include Research Operations, Reinforcement Learning and Program Manager, Safeguards Workforce Operations.",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "xAI careers",
+   "type": "lab",
+   "url": "https://job-boards.greenhouse.io/xai",
+   "status": "ok",
+   "categories": "Human Data dept; construction, energy, legal, code",
+   "band": "—",
+   "referral": "—",
+   "notes": "Greenhouse API 2026-11-11: 297 jobs (308 on 11-10); Memphis facilities/logistics/chef roles removed; AI Tutor and Human Data titles unchanged. Greenhouse API 2026-11-10: 308 jobs (304 on 11-09); AI Tutor (temporary, language) postings 10->16 (new: Latvian, Oromo, German, Croatian, Estonian, Icelandic, Uzbek, Amharic); Human Data Engineer / Manager unchanged. Greenhouse API 2026-11-03: 310 jobs (308 on 11-02); Human Data Engineer; Human Data Manager; titles unchanged 2026-11-05 Greenhouse API: 303 jobs; Human Data Engineer, Human Data Manager unchanged. 2026-11-13: 294 postings (was 299); no new AI Tutor/human-data titles. 2026-11-16: 298 postings (was 294); 20 AI Tutor + Human Data Engineer/Manager unchanged; new Software Engineer, Super Intelligence roles.",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "Google DeepMind careers",
+   "type": "lab",
+   "url": "https://deepmind.google/about/careers/",
+   "status": "ok",
+   "categories": "Research eng, legal, software",
+   "band": "—",
+   "referral": "—",
+   "notes": "Static landing (now redirects to deepmind.google/careers/, content identical to 10-30); jobs via Greenhouse",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "Meta careers (data)",
+   "type": "lab",
+   "url": "https://www.metacareers.com/jobs?q=data",
+   "status": "browser-ok",
+   "categories": "Data / code roles",
+   "band": "—",
+   "referral": "—",
+   "notes": "JS-heavy; Apify-worthy",
+   "checked": "2026-11-16",
+   "browser": {
+    "status": "ok",
+    "facts": [
+     "Redirects to /jobsearch/?q=data; 908 results over 91 pages",
+     "Top results are Data Center roles (infra), not Human Data",
+     "No pay shown on the list",
+     "Filters include Artificial Intelligence team"
+    ],
+    "notes": "No login needed. Search 'data' is noisy; try 'annotation' or 'human data'.",
+    "observed": "2026-10-26"
+   }
+  },
+  {
+   "name": "OpenAI careers",
+   "type": "lab",
+   "url": "https://jobs.ashbyhq.com/openai",
+   "status": "ok",
+   "categories": "—",
+   "band": "—",
+   "referral": "—",
+   "notes": "Ashby API 2026-11-11: 829 postings (826 on 11-10); new 'Subject Matter Expert, Legal' (Applied AI, SF, https://jobs.ashbyhq.com/openai/bb4e2d58-d481-4e81-ac69-0d99bbf5808e); Human Data titles unchanged. Ashby API 2026-11-10: 826 postings (813 on 11-09); 5 Human Data/Data Acquisition titles unchanged. Ashby API 2026-11-03: 805 postings (811 on 11-02); same 6 Human Data/data-acquisition roles. Board: https://jobs.ashbyhq.com/openai 2026-11-05 Ashby API: 812 postings; Human Data / Data Acquisition titles unchanged. 2026-11-13: 833 postings (was 825); adds cluster heavy on Ads Solutions client partners. 2026-11-16: 839 postings (was 833); 5 Human Data/Data Acquisition titles unchanged; adds GTM/healthcare/financial-services marketing, User Safety & Risk Operations roles.",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "OpenAI data partnerships",
+   "type": "lab",
+   "url": "https://openai.com/index/data-partnerships/",
+   "status": "browser-ok",
+   "categories": "—",
+   "band": "—",
+   "referral": "—",
+   "notes": "403 bot wall again 2026-11-03 (curl); browser facts from 10-26",
+   "checked": "2026-11-16",
+   "browser": {
+    "status": "ok",
+    "facts": [
+     "Loads in real browser (200), dated Nov 9 2023",
+     "Seeks large-scale datasets of human intention (long-form writing, conversations), any modality/language, not publicly accessible",
+     "Two partnership modes: Open-Source Archive and private datasets",
+     "Examples: Icelandic Government/Miðeind, Free Law Project",
+     "Offers OCR/ASR to digitize and clean data; no sensitive/personal data wanted",
+     "No payout figures"
+    ],
+    "notes": "CTA: Submit interest (external form). Real browser only; bots get 403.",
+    "observed": "2026-10-26"
+   }
+  },
+  {
+   "name": "Pangea.ai (code licensing)",
+   "type": "buyer",
+   "url": "https://aidata.broker/buyers",
+   "status": "board-only",
+   "categories": "Private source code + git history",
+   "band": "$100 per million tokens of source code; $40 per million tokens of git history (per AIData board)",
+   "referral": "Not published",
+   "notes": "New on AIData board 2026-10-28 as intermediary; board says $6M paid to code owners in last 60 days across 11,069 repos (its own count, 27 Oct 2026); no size/region rule. pangea.ai home page (200) shows an AI-talent marketplace with no code-licensing copy — programme URL not verified; no direct link from board. 2026-10-30: pangea.ai CTA changed from \"Join as a fractional CTO/CPO\" to \"Join as Talent\" (fractional CTO/CPO/CAIO, FDEs, AI/ML engineers); still no code-licensing copy. 2026-11-02: pangea.ai sign-in link reads \"Agency sign in\" (was \"Agency & Talent sign in\"); still no code-licensing copy.",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "Idler",
+   "type": "buyer",
+   "url": "https://aidata.broker/buyers",
+   "status": "board-only",
+   "categories": "Codebases, de-identified business data; RL environments from production work",
+   "band": "No price published",
+   "referral": "Not published",
+   "notes": "New on AIData board 2026-10-28 (buys for own account); asks companies with 10–100 employees to license codebase or de-identified business data. idler.ai (200) reads 'Reinforcement learning environments built from real production work' but the 10–100 ask was not found there — programme URL not verified.",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "Patronus AI (data partnerships)",
+   "type": "buyer",
+   "url": "https://data.patronus.ai",
+   "status": "ok",
+   "categories": "Codebases (private production software with dev history), company records (emails, documents, orders, invoices, tickets), released games (code, assets, dev history)",
+   "band": "No price published; written offer after sample review under NDA",
+   "referral": "Data partners receive 15% of the license fee after the owner is paid (subject to partner agreement)",
+   "notes": "New on AIData board 2026-11-04 (buys for own account). Verified on data.patronus.ai 2026-11-04: first answer 2 business days, sample review 5 business days, full review up to 30 days, paid directly on acceptance, non-exclusive license; licenses for its own AI training/evaluation tasks and environments, does not resell raw code/records; takes retired code and closed companies; multi-company reps via data@patronus.ai. Linked from patronus.ai home page. 2026-11-05: data.patronus.ai text-identical; patronus.ai home nav dropped News and 'Earn as an expert' links. 2026-11-13 per AIData board (written to the board 12 Nov 2026; not on Patronus pages): code needs 10,000+ lines original code, 1,000 commits, 5 contributors, 2 yrs history, never public, mostly human-written; records need 20+ people, 2 yrs, 2+ overlapping systems, single licensing party; US/Canada/Western Europe focus; takes law/accounting/finance firms' own records excluding client files; takes retired code and closed companies.",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "AIData.Broker board",
+   "type": "seed",
+   "url": "https://aidata.broker/buyers",
+   "status": "ok",
+   "categories": "44 buyers (32 with public figure); 20 buy for own account; 15 marketplaces",
+   "band": "Up to $5M",
+   "referral": "9 pay for introductions",
+   "notes": "2026-11-12: header Updated 5 Nov; short answers last reviewed 11 Nov; 44 buyers (was 42), 32 with figure (unchanged), 20 own-account (was 19), 15 marketplaces (was 14), 9 intro-payers, top $5M; new own-account Invisible Technologies and new marketplace Redpine; records buyers 25->27 (middle half $150K-$548K unchanged; 19 of 27 publish no floor), source code 17->18, video 13->14, audio 8->10, images 10->11, text 7->8, physical-world 4->6; vendors saying they pay 34->35; clauses 470; new 'What is your data worth?' estimator ($42K pessimistic / $260K optimistic on two answers vs 9 public prices); new small-company intro stat (buyers took 5 of 15 introduced 1-9 person firms vs 17 of 21 at 10-49; middle valuation $13K for 1-9 people); Labelbox Prism row adds consent rule for recordings/images of people; new guide 'AI Data Referral Programs'; board table licence changed from CC BY 4.0 free download to paid Market Data Licence (quoting a figure with a link still allowed). 2026-11-11: header Updated 5 Nov; short answers last reviewed 10 Nov; 42 buyers (was 41), 32 with figure (was 31), 19 own-account (was 18), 9 intro-payers, top $5M; new own-account buyer Claru (claru.ai); video buyers 12->13; records floors 7->8 (17 publish none); vendors saying they pay 33->34; clauses 470 (was 465); new 'Startup programme' link. 2026-11-10: short answers last reviewed 9 Nov 2026; 41 buyers (was 42), 31 with public figure (was 32), 18 own-account, 9 pay for introductions (was 10), top $5M; Grepped (intermediary) taken off the main board into a new 'Reported concerns (1)' section citing unconfirmed self-reported revenue ($48M then $144M ARR claims), site code calling payout estimates 'deliberately optimistic', referral clause 5.5 lock-in, domain grepped.ai; 33 data vendors say they pay (unchanged); clauses 465 (was 479); company-records buyers 25, middle half $131K-$548K -> $150K-$548K; source-code buyers 16->17 ($1,478-$18K unchanged); datasets/tasks/environments buyers 7->6 ($42-$96/hr unchanged); 18 of 25 records buyers publish no floor (7 floors, 3 ask 3+ yrs); new guide 'DataVendor by HUD'. 2026-11-09: 42 buyers (was 44), 32 with public figure (was 34), 18 own-account (was 19), 10 pay for introductions (was 12), top $5M; HUMXN Research Labs (own-account) and eeko systems (intermediary) removed; 33 data vendors say they pay (was 30); clauses 479 (was 497); records buyers 25 (was 27), middle half $131K-$548K unchanged; 18 of 25 publish no floor; new guide /guides/google-content-offer-pilot; new head-to-head comparisons section. Board header still says Updated 22 Oct 2026 but short answers last reviewed 29 Oct 2026; 42→44 buyers (new: Pangea.ai intermediary, Idler own-account), 31→33 with public figure, direct own-account buyers 19→20, 12 pay for intros, highest figure $5M unchanged. New block: per-kind-of-company deal ranges from buyer listings (law firms $50K–$1.25M; accounting/tax $25K–$865K; medical practices $80K–$820K; imaging $80K–$620K; digital health $100K–$900K; investment firms $50K–$800K; cybersecurity $20K–$750K; semiconductor/materials $100K–$750K; biotech labs $50K–$875K; publishers/education $35K–$370K; video studios $95K–$870K; game studios $100K–$1M). Primary seed. 2026-10-29: only wording change on micro1 shut-down track (30+ employees / 10+ countries / English, board now says it is unclear whether countries means operating or open markets); counts and figures unchanged. 2026-10-30: header Updated 22→27 Oct; buyers 44 / with figure 31-33 unchanged; clauses read 357→358; Collinear AI wording softened from \"We usually quote an initial range within a day\" to \"We indicate interest within a day\"; broker policy changed: it now introduces holders through buyers' published referral programmes and accepts those payouts on top of its fee (previously declined all buyer money). 2026-11-02: header still Updated 27 Oct; short answers last reviewed 1 Nov 2026; buyers 44 / 33 with figure / 20 own-account / 13 marketplaces / 12 pay intros / $5M top unchanged; clauses read 358→361; \"data vendors say they pay for data\" 31→30. Mercor row: 24→25 listings, floor $20K→$10K ($1.5M top unchanged). New deal-range kind: Design and web agencies $20,000–$890,000. New \"Who buys each kind of data\" table (public price, middle half / buyers on board): company records $132K–$492K per company / 27; source code $1,352–$5,869 per repository / 17; video $15–$137 per hour / 13; audio $65–$266 per hour / 9; images $0.32–$5.04 per image / 11; text $0.000092–$0.0021 per word / 7; datasets/tasks/environments $524–$2,000 per environment / 7; physical-world $4.48–$25 per hour of video / 5; expert and human work $51–$100 per hour / 3. New FAQ figures: public sales of a company's records have a median of $72.5K per company; of 27 company-records buyers, 6 publish a minimum headcount (floors 6 [Mode, legal] to 40 [Scale AI]) and 2 ask for 3+ years of records. Collinear AI now states best fit: English data from US, Canada, UK/EU, Australia or New Zealand, teams of about 50+, smaller deep teams possible. DataVendor (HUD): still keeps 20% of earnings, but now pays Stripe transfer/payout fees itself (previously seller bore Stripe cross-border fee); listing now on accepting vendor agreements (mutual NDA wording dropped); Tier 2 is one click, Tier 3 by invitation. 2026-11-03: short answers last reviewed 2 Nov 2026; Turing (Lazarus) moved from \"Buys for its own account\" to \"Marketplace, pays a share of sales\" (own-account 20→19, marketplaces 13→14; marketplace examples now lead with Turing (Lazarus)); company records middle-half public price $132K→$135K–$492K; clauses read 361→374; FAQ \"Where can I sell a dataset\" block removed; total buyers 44, 33 with figure, 12 pay intros, $5M top unchanged. 2026-11-04: buyers 44→45 (new: Patronus AI, own-account), with public figure 33→34, own-account 19→20, marketplaces 14, pay intros 12→13, $5M top unchanged; short answers last reviewed 3 Nov 2026; clauses read 374→422; company-records buyers 27→28, middle half $135K–$492K→$131K–$469K; source-code buyers 17→18 ($1,352–$5,869 unchanged); records buyers publishing no headcount floor 21→22. Board's own model changed: it now introduces holders free to every buyer whose rules take their data (buyers pay it), and runs its own sale only where that earns more. 2026-11-05: header Updated 27 Oct→1 Nov; short answers reviewed 5 Nov; buyers 45 / 34 with figure / 20 own-account / 14 marketplaces / 13 pay intros / $5M top unchanged; clauses read 422→494. Company records middle half $131K–$469K→$131K–$548K (28 buyers); video $15–$137→$15–$177/hr; text $0.000092–$0.0021→$0.00031–$0.0022/word; datasets/tasks/environments $524–$2,000→$512–$2,000/env. Records buyers publishing a headcount floor 6→7 and a 3+ year history ask 2→3 (AfterQuery read as ≥10 people / 3 yrs since 4 Nov, the founder's decision). Summary now cites micro1 at up to $3M (was $2M). Grepped copy 'de-identify it'→'prepare it'. First fetch 429; retry 200. 2026-11-08: short answers last reviewed 8 Nov 2026; buyers 45→44 (removed: The General Data Company, own-account industrial records, no figure); own-account 20→19; pay intros 13→12; public figure 34; marketplaces 14; $5M top unchanged; clauses read 494→497. Company-records buyers 28→27, middle half unchanged $131K–$548K; records buyers publishing no headcount floor 21→20 (floors 7, 3-year asks 3). Source-code middle half $1,352–$5,869→$1,478–$18K per repository (18 buyers). Datasets/tasks/environments $512–$2,000 per environment→$42–$96 per hour of work (7 buyers). Handshake (board): $400K–$800K+ default now on data-partnerships page beside “up to $100,000”; licence page shows no estimate; FAQ calculator link 404 (Handshake JS page not independently verified). 2026-11-13: short answers reviewed 12 Nov 2026; still 44 buyers, 20 own-account; new industry band 'Consumer brands and photo studios' $30,000 to $800,000; estimator pessimistic $42K->$40K (optimistic $260K unchanged). 2026-11-16: header Updated 5->10 Nov 2026; short answers reviewed 15 Nov 2026; still 44 buyers (32 with public figure, 20 own-account, 15 marketplaces, 9 pay for intros, top $5M); no joins/exits; clauses read 470->471. Estimator pessimistic $40K->$36K (optimistic $260K). Middle-half bands: company records $150K-$548K->$149K-$537K (27 buyers); datasets/tasks/environments $42-$96->$49-$102 per hour of work, buyers 6->7; expert and human work $51-$100->$54-$104 per hour (3). Other bands unchanged. Buyer-text updates dated 13-15 Nov: Handshake licence/referral pages claim $250M paid to 1,000+ partner companies, data-partnerships page A/B (one variant shows $400K-$800K+ estimate, /ai/data-partnerships-b none), licence page payout line blank until a form is filled; Nyne data-partnerships estimate now 10-15% of its older estimator range (100 people/10 yrs/USA: $38,308-$134,545 vs older nyne.ai/data-estimate $304,500-$657,000), adds decision-maker requirement; Mercor listings 25->26; Versos AI estimate threshold 5,000->10,000 video hours; AfterQuery says task sets fit (15 Nov); Polyshares track-record licences described as perpetual exclusive; Troveo 'typical full-company deals start at six figures'; Datarade adds Gold plan (custom commission); Asimov collector page pays individuals $5-$15/hr; Newsflare licence terms 1-5 yrs or perpetual, 90-day upload minimum; Redpine copy changed (no per-token price now quoted on board).",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "Google Content Offer Pilot",
+   "type": "buyer",
+   "url": "https://contentpilot.google.com/",
+   "status": "ok",
+   "categories": "Private code repositories and offline datasets (non-exclusive licence)",
+   "band": "No published price; fee agreed per partner after invitation",
+   "referral": "none published",
+   "notes": "Discovered via AIData guide https://aidata.broker/guides/google-content-offer-pilot (8 Nov 2026). Page title 'Content Offer Pilot: Helping unlock new revenue streams' (200). Google also has https://ai.google/partnerships-to-improve-our-ai-products/ (200).",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "Claru",
+   "type": "buyer",
+   "url": "https://claru.ai/",
+   "status": "board-listed",
+   "categories": "Workplace video footage / egocentric capture for physical AI (security, QA, training cameras, smart glasses, drones)",
+   "band": "Per AIData board: typical first deal $5K-$50K archive licence, or $10-$120/hr capture rate",
+   "referral": "Not published",
+   "notes": "New on AIData board 2026-11-11 (buys for own account). claru.ai homepage 200: 'Training data for physical AI', 34,000+ contributors, 70+ countries, 5+ frontier lab partnerships; board's pricing/terms quotes not found on homepage - partner page URL not verified.",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "Invisible Technologies (data sales)",
+   "type": "buyer",
+   "url": "https://www.invisibletech.ai/data-partnerships/data-sales",
+   "status": "200",
+   "categories": "Company operational records (decision records: claims, contract redlines, incident resolution)",
+   "band": "No amount published; payout set by volume, time span, domain uniqueness, documentation quality, licence type",
+   "referral": "'Refer a data partner' form on page; no referral payout published",
+   "notes": "New on AIData board 2026-11-12 (buys for own account). Page 200: 'Monetize your organization's data'; operating status Active / Winding down / Defunct-sunset; 'No buyer sees raw records'; licences specific rights for a defined term.",
+   "checked": "2026-11-16"
+  },
+  {
+   "name": "Redpine",
+   "type": "marketplace",
+   "url": "https://www.redpine.ai/",
+   "status": "200",
+   "categories": "Non-public content: peer-reviewed research, archives, non-public image libraries, video for world models, private code repos",
+   "band": "No holder amount published; datasets licensed at the source (per AIData board 13-15 Nov)",
+   "referral": "Not published",
+   "notes": "New on AIData board 2026-11-12 (marketplace, pays a share of sales). Homepage 200: licensed data for AI agents and model training via API/MCP/CLI; 200B+ tokens of licensed research. 2026-11-16 per AIData board: payment copy now 'licensed at the source and cleared for AI training', no holder amount; $1 per 1,000 tokens figure no longer quoted. redpine.ai byte-identical to 11-13.",
+   "checked": "2026-11-16"
+  }
+ ],
+ "hot": [
+  [
+   "Software / code",
+   12
+  ],
+  [
+   "Finance & accounting",
+   8
+  ],
+  [
+   "Legal",
+   8
+  ],
+  [
+   "Healthcare / medical",
+   6
+  ],
+  [
+   "Manufacturing",
+   4
+  ],
+  [
+   "Logistics",
+   4
+  ],
+  [
+   "Construction",
+   3
+  ],
+  [
+   "Insurance",
+   3
+  ],
+  [
+   "Agent trajectories",
+   2
+  ]
+ ],
+ "deltas_vs_prev": [
+  "AIData estimator pessimistic $40K->$36K (optimistic $260K unchanged)",
+  "Company-records middle half $150K-$548K->$149K-$537K (27 buyers)",
+  "Datasets/tasks/environments middle half $42-$96->$49-$102 per hour of work; buyers 6->7; AfterQuery says task sets fit (15 Nov)",
+  "Expert and human work middle half $51-$100->$54-$104 per hour (3 buyers)",
+  "Nyne (per board): data-partnerships estimate now 10-15% of older range ($38,308-$134,545 for 100 people/10 yrs/USA vs $304,500-$657,000); decision-maker required",
+  "Handshake (per board): claims $250M paid to 1,000+ partner companies; data-partnerships page A/B with one variant showing no estimate; licence-page payout line gated behind a form",
+  "Versos AI estimate threshold 5,000->10,000 video hours; Mercor listings 25->26; Polyshares licences perpetual exclusive; Datarade Gold plan",
+  "Board still 44/32/20/15/9; no buyer joined or left",
+  "xAI 294->298, Anthropic 673->661, OpenAI 833->839; Human Data titles unchanged",
+  "Ooak still unreachable; openai.com data-partnerships 403"
+ ],
+ "hot_note": "Hot-category counts carried from 2026-10-30 (not recomputed).",
+ "recheck": "ooak.ai: unreachable-2026-11-16; openai data-partnerships: 403-2026-11-16; HUMXN/Grepped: HUMXN parked; Grepped on board's Reported concerns; Handshake: JS page byte-identical on box; $250M claim and A/B variants per AIData board only; Claru: pricing/terms per AIData board only; claru.ai homepage 200 (physical-AI datasets, 34,000+ contributors) but no partner pricing found there; Invisible: no price published; referral form exists but no payout; AIData licence: board rows now under paid Market Data Licence - keep member answers to quoted figures with link, no row copying; Patronus: intake rules per AIData board only, not on data.patronus.ai; Nyne: estimate change per AIData board only; nyne.ai homepage text unchanged except phone"
+}
