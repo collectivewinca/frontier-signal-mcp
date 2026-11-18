@@ -2627,7 +2627,7 @@ export const RAW_BASELINES: unknown[] = [
       "Ooak still unreachable; openai.com data-partnerships 403"
     ],
     "hot_note": "Hot-category counts carried from 2026-10-30 (not recomputed).",
-    "recheck": "ooak.ai: unreachable-2026-11-16; openai data-partnerships: 403-2026-11-16; HUMXN/Grepped: HUMXN parked; Grepped on board's Reported concerns; Handshake: JS page byte-identical on box; $250M claim and A/B variants per AIData board only; Claru: pricing/terms per AIData board only; claru.ai homepage 200 (physical-AI datasets, 34,000+ contributors) but no partner pricing found there; Invisible: no price published; referral form exists but no payout; AIData licence: board rows now under paid Market Data Licence - keep member answers to quoted figures with link, no row copying; Patronus: intake rules per AIData board only, not on data.patronus.ai; Nyne: estimate change per AIData board only; nyne.ai homepage text unchanged except phone"
+    "recheck": "ooak.ai: unreachable-2026-11-16; openai data-partnerships: 403-2026-11-16; HUMXN/Grepped: HUMXN parked; Grepped on board's Reported concerns; Handshake: JS page byte-identical on box; $250M claim and A/B variants per AIData board only; Claru: pricing/terms per AIData board only; claru.ai homepage 200 (physical-AI datasets, 34,000+ contributors) but no partner pricing found there; Invisible: no price published; referral form exists but no payout; Patronus: intake rules per AIData board only, not on data.patronus.ai; Nyne: estimate change per AIData board only; nyne.ai homepage text unchanged except phone"
   }
 ];
 
